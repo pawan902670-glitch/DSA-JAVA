@@ -1,0 +1,69 @@
+class  LLImplementation{
+public  static   Node head;
+public static int size=0;
+  public static  class Node{
+    int val;
+    Node next;
+    
+    Node(int val){
+      this.val=val;
+    }
+  }
+  public  static  class LLStack{
+    
+    
+    void push(int val){
+    Node newNode=new Node(val);
+    if(head==null){
+      head=newNode;
+      return ;
+    }
+    Node temp=head;
+    while(temp.next!=null){
+      temp=temp.next;
+    }
+
+    temp.next=newNode;
+    
+    size++;
+  }
+  int pop(){
+    Node temp=head;
+   // Node sto=null;
+    while(temp.next.next!=null){
+      temp=temp.next;
+    }
+    int val=temp.next.val;
+    temp.next=null;
+    size--;
+    return val;
+    
+  }
+  int size(){
+  return size;  
+  }
+  void display(){
+    Node temp=head;
+    while(temp!=null){
+      System.out.print(temp.val+"->");
+      temp=temp.next;
+    }
+    System.out.print("null\n");
+  }
+}
+public static void main(String[]rags){
+    LLStack st=new LLStack();
+     st.push(1);
+     st.push(2);
+     st.push(3);
+      st.push(4); 
+       st.push(5);
+        st.push(6);
+        st.display();
+        System.out.println("pop element"+st.pop());
+        st.display();
+        System.out.println("size of list "+st.size());
+        st.display();
+        
+}
+}
