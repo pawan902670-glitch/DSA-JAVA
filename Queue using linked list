@@ -1,0 +1,107 @@
+
+import java.util.*;
+
+public class Main {
+
+  // Node class (each element of the queue)
+  public static class Node {
+    int data;
+    Node next;
+    Node(int data) {
+      this.data = data;
+      this.next = null;
+    }
+  }
+
+  // Linked List based Queue
+  public static class LinkedListQueue {
+    Node front = null;
+    Node rear = null;
+    int size = 0;
+
+    // Enqueue -> Add element at the end (rear)
+    public void enqueue(int val) {
+      Node newNode = new Node(val);
+      if (isEmpty()) {
+        front = rear = newNode;
+      } else {
+        rear.next = newNode;
+        rear = newNode;
+      }
+      size++;
+      System.out.println(" Enqueued: " + val);
+    }
+
+    // Dequeue -> Remove element from the front
+    public int dequeue() {
+      if (isEmpty()) {
+        System.out.println(" Queue is empty! Nothing to dequeue.");
+        return -1;
+      }
+      int val = front.data;
+      front = front.next;
+      if (front == null) { // if queue becomes empty
+        rear = null;
+      }
+      size--;
+      System.out.println(" Dequeued: " + val);
+      return val;
+    }
+
+    // Peek -> Show front element
+    public int peek() {
+      if (isEmpty()) {
+        System.out.println(" Queue is empty! No front element.");
+        return -1;
+      }
+      return front.data;
+    }
+
+    // isEmpty check
+    public boolean isEmpty() {
+      return front == null;
+    }
+
+    // Size of queue
+    public int size() {
+      return size;
+    }
+
+    // Display queue elements
+    public void display() {
+      if (isEmpty()) {
+        System.out.println("Queue is Empty ");
+        return;
+      }
+      System.out.print("Queue elements: ");
+      Node temp = front;
+      while (temp != null) {
+        System.out.print(temp.data + " ");
+        temp = temp.next;
+      }
+      System.out.println();
+    }
+  }
+
+  public static void main(String[] args) {
+    LinkedListQueue q = new LinkedListQueue();
+
+    q.display();
+    q.enqueue(10);
+    q.enqueue(20);
+    q.enqueue(30);
+    q.enqueue(40);
+    q.display();
+
+    System.out.println("\nPeek value: " + q.peek());
+    q.dequeue();
+    q.display();
+
+    q.enqueue(50);
+    q.enqueue(60);
+    q.display();
+
+    System.out.println("\nQueue Size: " + q.size());
+    System.out.println("Is Empty? " + (q.isEmpty() ? " Yes" : "❌ No"));
+  }
+}
