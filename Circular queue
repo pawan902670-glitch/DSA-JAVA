@@ -1,0 +1,81 @@
+import java.util.*;
+
+public class   circularQueueArray{
+  public static class cqa{
+    int f=-1;
+    int r=-1;
+    int size=0;
+    int []arr=new int[5];
+    public void add(int val) throws Exception{
+      if(size==arr.length){
+        throw new Exception("queue is full");
+      }
+      else if(size==0){
+        f=r=0;
+        arr[0]=val;
+      }
+      else if(r<arr.length-1){
+        arr[++r]=val;
+      }
+      else if(r==arr.length-1){
+        r=0;
+        arr[0]=val;
+      }
+      size++;
+    }
+    public int remove() throws Exception{
+      if(size==0){
+        throw new Exception("Queue is Empty");
+      }
+      else {
+        int val=arr[f];
+        if(f==arr.length-1)f=0;
+        else f++; size--;
+          return val;
+      }
+    }
+    public int peek() throws Exception{
+        if(size==0){
+          throw new Exception("Queue is Empty");
+          }
+          else return arr[f];
+          }
+        public void display(){
+          if(size==0){
+            System.out.println("Queue is Empty");
+            return ;
+          }
+          else if(f<=r){
+            for(int i=f;i<=r;i++){
+              System.out.print(arr[i]+" ");
+            }
+          }
+          else{
+            for(int i=f;i<arr.length;i++){
+              System.out.print(arr[i]+" ");
+            }
+            for(int i=0;i<=r;i++){
+              System.out.print(arr[i]+" ");
+            }
+          }
+          System.out.println();
+        } 
+  }
+  public static void main(String[]args)throws Exception{
+    cqa c=new cqa();
+    c.display();
+    c.add(1);
+      c.add(2);
+        c.add(3);
+          c.add(4);
+            c.add(5);
+            c.display();
+            c.remove();
+            c.display();
+            c.add(6);
+            c.display();
+            c.remove();
+            c.add(10);
+            c.display();
+  }
+}
