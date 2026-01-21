@@ -1,0 +1,338 @@
+📘 Arrays in DSA – Complete Notes (Why, What, How, Purpose)
+
+These notes are written for strong DSA foundation. Every topic explains WHY it exists, WHAT it is, HOW it works, and WHERE it is used. Last section includes Power Map (mental model).
+
+
+---
+
+1️⃣ What is an Array?
+
+✅ What
+
+An array is a linear data structure that stores elements of the same data type in contiguous memory locations.
+
+Example:
+
+arr = [10, 20, 30, 40]
+
+✅ Why
+
+Fast access using index
+
+Simple structure
+
+Base of many complex data structures
+
+
+✅ How
+
+Each element has an index (0-based)
+
+Address calculation:
+
+
+address = base + index × size
+
+✅ Purpose
+
+Store multiple values
+
+Perform fast read/write
+
+Foundation of DSA problems
+
+
+
+---
+
+2️⃣ Types of Arrays
+
+🔹 1D Array
+
+[1, 2, 3, 4]
+
+Used in most problems
+
+🔹 2D Array (Matrix)
+
+[[1,2],[3,4]]
+
+Used in grids, DP, games
+
+🔹 Static Array
+
+Fixed size
+
+Faster
+
+
+🔹 Dynamic Array
+
+Size grows (Vector / ArrayList)
+
+Used in real-world apps
+
+
+
+---
+
+3️⃣ Array Operations
+
+🔹 Access (O(1))
+
+arr[i]
+
+WHY fast? → Direct memory access
+
+🔹 Traversal (O(n))
+
+Visit every element
+
+🔹 Insertion
+
+End → O(1)
+
+Middle → O(n) (shifting required)
+
+
+🔹 Deletion
+
+End → O(1)
+
+Middle → O(n)
+
+
+
+---
+
+4️⃣ Time & Space Complexity (Must Know)
+
+Operation	Time
+
+Access	O(1)
+Search (Linear)	O(n)
+Insertion	O(n)
+Deletion	O(n)
+
+
+WHY IMPORTANT? → Interview + Optimization
+
+
+---
+
+5️⃣ Searching in Arrays
+
+🔹 Linear Search
+
+Works on any array
+
+Time: O(n)
+
+
+🔹 Binary Search
+
+Array must be sorted
+
+Time: O(log n)
+
+
+WHY Binary Search is fast? → Divide array into halves
+
+
+---
+
+6️⃣ Sorting Algorithms (Array-based)
+
+Algorithm	Time	Why Used
+
+Bubble	O(n²)	Learning
+Selection	O(n²)	Simplicity
+Insertion	O(n²)	Nearly sorted
+Merge	O(n log n)	Stable
+Quick	O(n log n)	Fast
+
+
+
+---
+
+7️⃣ Prefix Sum
+
+✅ What
+
+Pre-calculate sums
+
+✅ Why
+
+To answer range queries fast
+
+✅ How
+
+prefix[i] = prefix[i-1] + arr[i]
+
+✅ Purpose
+
+Reduce time from O(n) → O(1)
+
+
+---
+
+8️⃣ Subarray Concepts ⭐
+
+🔹 Subarray
+
+Continuous elements
+
+
+🔹 Total Subarrays
+
+n(n+1)/2
+
+🔹 Important Problems
+
+Max Subarray Sum
+
+Subarray with given sum
+
+
+
+---
+
+9️⃣ Kadane’s Algorithm
+
+✅ What
+
+Find max subarray sum
+
+✅ Why
+
+Brute force is too slow
+
+✅ How
+
+currentSum = max(arr[i], currentSum + arr[i])
+
+✅ Purpose
+
+Optimization (O(n))
+
+
+---
+
+🔟 Two Pointer Technique
+
+✅ What
+
+Use two indexes
+
+✅ Why
+
+Avoid nested loops
+
+✅ Use Cases
+
+Sorted arrays
+
+Pair sum
+
+Remove duplicates
+
+
+
+---
+
+1️⃣1️⃣ Sliding Window
+
+✅ What
+
+Fixed or variable window
+
+✅ Why
+
+Efficient subarray problems
+
+✅ Example
+
+Max sum of size k
+
+Longest subarray
+
+
+
+---
+
+1️⃣2️⃣ Hashing with Arrays
+
+🔹 Frequency Array
+
+count[arr[i]]++
+
+🔹 Why
+
+Fast lookup
+
+Avoid nested loops
+
+
+
+---
+
+1️⃣3️⃣ Important Array Patterns ⭐⭐⭐
+
+1. Prefix Sum
+
+
+2. Two Pointer
+
+
+3. Sliding Window
+
+
+4. Kadane
+
+
+5. Hash Map + Array
+
+
+6. Sorting + Greedy
+
+
+
+
+---
+
+1️⃣4️⃣ Common Mistakes
+
+❌ Forgetting edge cases ❌ Index out of bounds ❌ Using extra space unnecessarily
+
+
+---
+
+1️⃣5️⃣ POWER MAP (Mental Model) 🧠🔥
+
+ARRAY
+ ├── Basics
+ │    ├── Index
+ │    ├── Memory
+ │
+ ├── Operations
+ │    ├── Access O(1)
+ │    ├── Insert/Delete O(n)
+ │
+ ├── Techniques
+ │    ├── Prefix Sum
+ │    ├── Two Pointer
+ │    ├── Sliding Window
+ │    ├── Kadane
+ │
+ ├── Searching
+ │    ├── Linear
+ │    ├── Binary
+ │
+ ├── Sorting
+ │    ├── Merge
+ │    ├── Quick
+ │
+ └── Optimization
+      ├── Hashing
+      ├── Math
+
