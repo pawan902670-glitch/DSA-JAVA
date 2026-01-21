@@ -1,9 +1,4 @@
-📘 Arrays in DSA – Complete Notes (Why, What, How, Purpose)
 
-These notes are written for strong DSA foundation. Every topic explains WHY it exists, WHAT it is, HOW it works, and WHERE it is used. Last section includes Power Map (mental model).
-
-
----
 
 1️⃣ What is an Array?
 
