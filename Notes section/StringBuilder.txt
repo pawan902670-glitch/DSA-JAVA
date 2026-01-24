@@ -1,0 +1,466 @@
+
+1. What is a String?
+
+What
+
+A String in Java is a sequence of characters.
+
+Why
+
+Used to store and manipulate text data such as names, messages, passwords, etc.
+
+How
+
+Java provides the String class in java.lang package.
+
+Purpose
+
+To work with text easily and safely.
+
+String name = "John";
+
+
+---
+
+2. Declaration of String
+
+Method 1: Using String Literal
+
+String name = "Tony";
+
+Stored in String Constant Pool
+
+Memory efficient
+
+
+Method 2: Using new Keyword
+
+String name = new String("Tony");
+
+Stored in Heap memory
+
+
+Why two ways?
+
+To manage memory efficiently and give flexibility.
+
+
+---
+
+3. Taking String Input from User
+
+Using Scanner
+
+Scanner sc = new Scanner(System.in);
+
+next() Method
+
+Reads one word only
+
+
+String name = sc.next();
+
+nextLine() Method
+
+Reads full line (with spaces)
+
+
+String name = sc.nextLine();
+
+Example
+
+System.out.println("Your name is: " + name);
+
+
+---
+
+4. String Manipulation
+
+4.1 Concatenation
+
+What
+
+Joining two or more strings.
+
+How
+
+Using + operator
+
+String firstName = "Chris";
+String lastName = "John";
+String fullName = firstName + " " + lastName;
+
+Purpose
+
+To combine text values.
+
+
+---
+
+5. String Length
+
+What
+
+Returns number of characters in a string.
+
+Method
+
+length()
+
+Example
+
+String name = "Tony";
+System.out.println(name.length()); // 4
+
+
+---
+
+6. charAt() Method
+
+What
+
+Returns character at given index.
+
+How
+
+Index starts from 0
+
+String name = "Tony";
+System.out.println(name.charAt(0)); // T
+
+Purpose
+
+To access individual characters.
+
+
+---
+
+7. Comparing Strings
+
+7.1 equals()
+
+What
+
+Checks content of strings
+
+String a = "Tony";
+String b = "Tony";
+System.out.println(a.equals(b)); // true
+
+7.2 == Operator
+
+What
+
+Checks reference (memory location)
+
+System.out.println(a == b); // may be true or false
+
+Important
+
+Always use equals() for string comparison.
+
+
+---
+
+8. compareTo() Method
+
+What
+
+Compares strings lexicographically.
+
+Returns
+
+0 → equal
+
+Positive → first > second
+
+Negative → first < second
+
+
+String a = "abc";
+String b = "abd";
+System.out.println(a.compareTo(b));
+
+
+---
+
+9. Substring
+
+What
+
+Extracts part of a string.
+
+How
+
+substring(startIndex, endIndex)
+
+Example
+
+String sentence = "My name is Tony";
+String name = sentence.substring(11, 15);
+System.out.println(name); // Tony
+
+
+---
+
+10. String Immutability
+
+What
+
+String objects cannot be changed once created.
+
+Why
+
+Security, performance, memory efficiency.
+
+Example
+
+String s = "Hello";
+s = s + " World"; // new object created
+
+
+---
+
+11. Important String Methods (Quick Revision)
+
+Method	Purpose
+
+length()	Finds length
+charAt()	Gets character
+equals()	Compare content
+compareTo()	Lexicographical compare
+substring()	Extract string
+toUpperCase()	Convert to uppercase
+toLowerCase()	Convert to lowercase
+trim()	Remove spaces
+
+
+
+---
+
+12. Why String is an Object?
+
+Stored as object in memory
+
+Has built‑in methods
+
+Supports immutability
+
+
+
+---
+
+13. Where Strings Are Used?
+
+User input
+
+File handling
+
+Web applications
+
+Database values
+
+Messages and logs
+
+
+
+---
+
+14. Exam Tips ⭐
+
+✔ Use equals() not == ✔ Remember index starts from 0 ✔ Strings are immutable ✔ next() vs nextLine() difference is important
+
+
+---
+
+One‑Line Summary
+
+> String is an immutable object used to store and manipulate text in Java.
+
+
+
+
+---
+
+If you want, I can also make:
+
+📄 1‑page exam cheat sheet
+
+❓ Important viva questions
+
+🧠 MCQs with answers
+
+✍️ Practice programs
+
+
+Just tell me 😊
+
+
+---
+
+Java StringBuilder – Simple & Proper Revision Notes
+
+(As per your notebook style)
+
+
+---
+
+1. What is StringBuilder?
+
+What
+
+StringBuilder is a mutable class used to create and modify strings.
+
+Why
+
+String is immutable (cannot be changed). StringBuilder allows modification without creating new objects, making it faster.
+
+Purpose
+
+To perform frequent string modifications efficiently.
+
+
+---
+
+2. StringBuilder Declaration
+
+StringBuilder sb = new StringBuilder("Tony");
+System.out.println(sb);
+
+
+---
+
+3. charAt() – Get Character
+
+What
+
+Returns character at a specific index.
+
+System.out.println(sb.charAt(0));
+
+
+---
+
+4. setCharAt() – Change Character
+
+What
+
+Replaces character at given index.
+
+sb.setCharAt(0, 'P');
+System.out.println(sb);
+
+
+---
+
+5. insert() Method
+
+What
+
+Inserts characters at given index.
+
+sb.insert(0, 'S');
+System.out.println(sb);
+
+
+---
+
+6. delete() Method
+
+What
+
+Deletes characters from start index to end index.
+
+sb.delete(2, 3);
+System.out.println(sb);
+
+
+---
+
+7. append() Method
+
+What
+
+Adds text at the end of the string.
+
+sb.append(" Kumar");
+System.out.println(sb);
+
+Note
+
+Most commonly used method.
+
+
+---
+
+8. Operations are Performed in Same String
+
+StringBuilder sb = new StringBuilder("Hello");
+sb.append(" World");
+System.out.println(sb);
+
+✔ No new object created ✔ Same memory is used
+
+
+---
+
+9. Difference: String vs StringBuilder
+
+Feature	String	StringBuilder
+
+Mutable	❌ No	✅ Yes
+Performance	Slow	Fast
+Memory	More objects	Less objects
+
+
+
+---
+
+10. Important Exam Points ⭐
+
+✔ StringBuilder is mutable ✔ Faster than String ✔ Used when many modifications are required ✔ Methods: append, insert, delete, setCharAt
+
+
+---
+
+One-Line Summary
+
+> StringBuilder is a mutable class used for fast string manipulation in Java.
+
+Done 👍
+I’ve made proper, clean StringBuilder notes exactly like your notebook style, with:
+
+Step-wise points (1, 2, 3…)
+
+Simple definitions
+
+Short code examples
+
+Clear purpose & usage
+
+Exam-friendly language
+
+
+📘 Topics covered in these new notes:
+
+StringBuilder introduction
+
+Why StringBuilder is used
+
+Declaration
+
+charAt()
+
+setCharAt()
+
+insert()
+
+delete()
+
+append()
+
+Same object modification concept
+
+String vs StringBuilder comparison
+
+Important exam points
