@@ -1,0 +1,274 @@
+
+1. What is a Linked List?
+
+A linked list is a linear data structure where elements (called nodes) are stored non‑contiguously in memory. Each node contains:
+
+Data – the value stored
+
+Address (reference) – link to the next (and/or previous) node
+
+
+Unlike arrays, linked lists do not require continuous memory allocation.
+
+
+---
+
+2. Why Linked Lists Are Used (Purpose)
+
+Linked lists are mainly used when:
+
+Dynamic memory allocation is required
+
+Frequent insertion and deletion operations are needed
+
+Memory size is not fixed in advance
+
+
+Problems with Arrays (Why Linked List?)
+
+Fixed size (cannot grow/shrink easily)
+
+Insertion & deletion are costly (shifting elements)
+
+Memory wastage or overflow may occur
+
+
+Linked lists solve these problems.
+
+
+---
+
+3. Types of Linked Lists
+
+1. Singly Linked List
+
+
+2. Doubly Linked List
+
+
+3. Circular Linked List (not covered here)
+
+
+
+
+---
+
+4. Singly Linked List (SLL)
+
+Structure of a Node
+
+Each node contains:
+
+data
+
+next (address of next node)
+
+
+[data | next]
+
+Example
+
+1 → 2 → 3 → 4 → null
+
+Traversal is one‑directional (forward only)
+
+Last node points to null
+
+
+
+---
+
+5. Singly Linked List – Code Example (Java‑like)
+
+Node Class
+
+class Node {
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+Linked List Class
+
+class LinkedList {
+    Node head;
+
+    void add(int data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+
+        Node temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = newNode;
+    }
+}
+
+
+---
+
+6. Operations on Singly Linked List
+
+Insertion (beginning, end, middle)
+
+Deletion
+
+Traversal
+
+Searching
+
+
+
+---
+
+7. Advantages of Singly Linked List
+
+Dynamic size
+
+Efficient insertion & deletion
+
+No memory wastage
+
+
+8. Disadvantages of Singly Linked List
+
+No backward traversal
+
+Extra memory needed for pointer
+
+Slower access compared to arrays
+
+
+
+---
+
+9. Doubly Linked List (DLL)
+
+Structure of a Node
+
+Each node contains:
+
+data
+
+next (next node address)
+
+prev (previous node address)
+
+
+[prev | data | next]
+
+Example
+
+null ← 1 ⇄ 2 ⇄ 3 ⇄ 4 → null
+
+
+---
+
+10. Why Doubly Linked List?
+
+Used when:
+
+Backward traversal is required
+
+Deletion needs to be efficient without extra traversal
+
+
+
+---
+
+11. Doubly Linked List – Code Example
+
+Node Class
+
+class Node {
+    int data;
+    Node next;
+    Node prev;
+
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+        this.prev = null;
+    }
+}
+
+Add Node at End
+
+class DoublyLinkedList {
+    Node head, tail;
+
+    void add(int data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = tail = newNode;
+            return;
+        }
+
+        tail.next = newNode;
+        newNode.prev = tail;
+        tail = newNode;
+    }
+}
+
+
+---
+
+12. Advantages of Doubly Linked List
+
+Forward and backward traversal
+
+Easier deletion
+
+More flexible
+
+
+13. Disadvantages of Doubly Linked List
+
+Extra memory (two pointers)
+
+Slightly complex implementation
+
+
+
+---
+
+14. Comparison: SLL vs DLL
+
+Feature	Singly LL	Doubly LL
+
+Pointers	1	2
+Traversal	One direction	Both directions
+Memory	Less	More
+Complexity	Simple	Complex
+
+
+
+---
+
+15. Real‑Life Applications
+
+Music playlist
+
+Browser history
+
+Undo/Redo operations
+
+Dynamic memory management
+
+
+
+---
+
+Summary
+
+Linked lists are powerful data structures when memory flexibility and dynamic operations are required. Singly linked lists are lightweight, while doubly linked lists provide more control at the cost of extra memory.
