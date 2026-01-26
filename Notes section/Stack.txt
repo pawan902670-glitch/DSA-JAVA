@@ -1,0 +1,227 @@
+
+
+---
+
+📚 STACK (Data Structure)
+
+🔹 What is a Stack?
+
+A Stack is a linear data structure that follows the LIFO principle.
+
+👉 LIFO
+
+Last In, First Out
+The element that is inserted last is removed first.
+
+📌 Real-life example:
+
+Stack of plates
+
+Undo/Redo operation
+
+Browser back button
+
+
+
+---
+
+🔹 Why Stack is Used? (Purpose)
+
+Stacks are used when:
+
+You need reverse order processing
+
+Only the most recent element should be accessed
+
+Recursive function calls are involved
+
+Temporary storage is required
+
+
+👉 Stack helps control the order of execution efficiently.
+
+
+---
+
+🔹 Characteristics of Stack
+
+Linear data structure
+
+Insertion & deletion happen from one end only
+
+That end is called TOP
+
+Access is restricted (no random access)
+
+
+
+---
+
+🔹 Stack Operations
+
+Operation	Purpose
+
+Push	Insert an element
+Pop	Remove the top element
+Peek / Top	View top element
+isEmpty()	Check if stack is empty
+isFull()	Check if stack is full
+
+
+📌 All operations take O(1) time complexity
+
+
+---
+
+🔹 Stack Representation
+
+TOP
+    ↓
+  | 30 |
+  | 20 |
+  | 10 |
+  ------
+
+Push → element added at TOP
+
+Pop → element removed from TOP
+
+
+
+---
+
+🔹 Stack Overflow & Underflow
+
+Overflow: Stack is full & push is attempted
+
+Underflow: Stack is empty & pop is attempted
+
+
+
+---
+
+🔹 Types of Stack Implementation
+
+1️⃣ Array Implementation
+
+Uses array
+
+Fixed size
+
+Fast access
+
+May cause overflow
+
+
+📌 Example:
+
+int stack[] = new int[5];
+
+
+---
+
+2️⃣ ArrayList Implementation
+
+Dynamic size
+
+Internally uses array
+
+No overflow (resizes automatically)
+
+
+📌 Used in Java Collections
+
+
+---
+
+3️⃣ Linked List Implementation
+
+Uses nodes (considered dynamic)
+
+No size limitation
+
+Extra memory for pointers
+
+
+📌 Stack top = Head node
+
+
+---
+
+🔹 Stack ADT (Abstract Data Type)
+
+Stack ADT defines:
+
+Data
+
+Operations
+
+Rules (LIFO)
+
+
+👉 ADT tells what stack does, not how
+
+
+---
+
+🔹 Applications of Stack
+
+1️⃣ Function calls / Recursion
+2️⃣ Expression evaluation
+
+Infix → Postfix 3️⃣ Parenthesis matching 4️⃣ Undo / Redo operations 5️⃣ Backtracking 6️⃣ Reversal of data 7️⃣ Memory management
+
+
+
+---
+
+🔹 Advantages of Stack
+
+Easy to implement
+
+Efficient (O(1))
+
+Controls program execution
+
+Useful for recursive problems
+
+
+
+---
+
+🔹 Disadvantages of Stack
+
+Limited access
+
+Overflow issue (array stack)
+
+No random access
+
+
+
+---
+
+🔹 Summary (Exam Ready ✍️)
+
+Stack follows LIFO
+
+Operations: push, pop, peek
+
+Time complexity: O(1)
+
+Implemented using:
+
+Array (fixed)
+
+ArrayList (dynamic)
+
+Linked List
+
+
+Used in:
+
+Recursion
+
+Expression evaluation
+
+Undo/Redo
