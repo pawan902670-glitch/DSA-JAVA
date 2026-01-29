@@ -1,0 +1,423 @@
+
+---
+
+📌 QUEUE DATA STRUCTURE (DETAILED NOTES)
+
+
+---
+
+1️⃣ What is a Queue?
+
+A Queue is a linear data structure that follows the rule:
+
+🔹 FIFO – First In First Out
+
+👉 The element that is inserted first will be removed first.
+
+🧠 Real-Life Example
+
+Line at a bus stop
+
+Line at ATM
+
+Printer queue
+
+
+
+---
+
+2️⃣ Queue Visualization
+
+Front → [ 10 | 20 | 30 | 40 ] ← Rear
+
+Front → element to be removed
+
+Rear → position where new element is added
+
+
+
+---
+
+3️⃣ Queue Terminology
+
+Term	Meaning
+
+Front	First element index
+Rear	Last element index
+Enqueue	Add element
+Dequeue	Remove element
+Peek	See front element
+
+
+
+---
+
+4️⃣ Queue Operations (Theory)
+
+🔹 Enqueue (Insertion)
+
+Element is added at the REAR
+
+
+🔹 Dequeue (Deletion)
+
+Element is removed from the FRONT
+
+
+🔹 Peek
+
+Shows front element without removing
+
+
+🔹 isEmpty
+
+Checks if queue has no elements
+
+
+🔹 isFull
+
+Checks if queue is full (array queue)
+
+
+
+---
+
+📌 QUEUE USING ARRAY (VERY DETAILED)
+
+
+---
+
+5️⃣ Array Queue Representation
+
+Index →   0   1   2   3   4
+Array →  [10 |20 |30 |__ |__]
+           ↑         ↑
+         Front      Rear
+
+
+---
+
+6️⃣ Initialization (Very Important)
+
+front = -1;
+rear = -1;
+
+Why -1?
+
+Indicates queue is empty
+
+No element exists yet
+
+
+
+---
+
+7️⃣ isEmpty() Method
+
+Logic:
+
+Queue is empty when:
+
+rear == -1
+
+Code:
+
+public boolean isEmpty() {
+    return rear == -1;
+}
+
+
+---
+
+8️⃣ isFull() Method
+
+Logic:
+
+Queue is full when:
+
+rear == size - 1
+
+Code:
+
+public boolean isFull() {
+    return rear == size - 1;
+}
+
+
+---
+
+9️⃣ Enqueue Operation (INSERT)
+
+Steps (Theory)
+
+1. Check if queue is full
+
+
+2. If first element → set front = 0
+
+
+3. Increase rear
+
+
+4. Insert element at arr[rear]
+
+
+
+
+---
+
+Code (Enqueue)
+
+public void enqueue(int data) {
+
+    // Step 1: Check full
+    if (isFull()) {
+        System.out.println("Queue is Full");
+        return;
+    }
+
+    // Step 2: First element
+    if (front == -1) {
+        front = 0;
+    }
+
+    // Step 3: Move rear
+    rear++;
+
+    // Step 4: Insert
+    arr[rear] = data;
+}
+
+
+---
+
+Visualization
+
+enqueue(10)
+Front → [10 |__ |__] ← Rear
+
+enqueue(20)
+Front → [10 |20 |__] ← Rear
+
+
+---
+
+🔟 Dequeue Operation (REMOVE)
+
+Steps (Theory)
+
+1. Check if queue is empty
+
+
+2. Store front element
+
+
+3. Increase front
+
+
+4. If front > rear, reset both to -1
+
+
+
+
+---
+
+Code (Dequeue)
+
+public int dequeue() {
+
+    if (isEmpty()) {
+        System.out.println("Queue is Empty");
+        return -1;
+    }
+
+    int removed = arr[front];
+
+    front++;
+
+    // Queue becomes empty
+    if (front > rear) {
+        front = rear = -1;
+    }
+
+    return removed;
+}
+
+
+---
+
+Visualization
+
+Before dequeue:
+Front → [10 |20 |30] ← Rear
+
+After dequeue:
+Front → [20 |30] ← Rear
+
+
+---
+
+1️⃣1️⃣ Peek Operation
+
+Code:
+
+public int peek() {
+    if (isEmpty()) {
+        return -1;
+    }
+    return arr[front];
+}
+
+
+---
+
+1️⃣2️⃣ Time Complexity
+
+Operation	Time
+
+Enqueue	O(1)
+Dequeue	O(1)
+Peek	O(1)
+
+
+
+---
+
+📌 CIRCULAR QUEUE (THEORY + SYNTAX)
+
+
+---
+
+13️⃣ Why Circular Queue?
+
+❌ Normal queue wastes space
+✅ Circular queue reuses empty space
+
+
+---
+
+Circular Visualization
+
+[__] ← Rear
+    ↑
+[30]   [10]
+    ↓
+   [20] ← Front
+
+
+---
+
+Full Condition
+
+(rear + 1) % size == front
+
+Empty Condition
+
+front == -1
+
+
+---
+
+📌 QUEUE USING LINKED LIST
+
+
+---
+
+14️⃣ Structure
+
+class Node {
+    int data;
+    Node next;
+}
+
+Front → [10 | next] → [20 | next] → NULL ← Rear
+
+
+---
+
+Enqueue (Linked List)
+
+public void enqueue(int data) {
+
+    Node newNode = new Node(data);
+
+    if (rear == null) {
+        front = rear = newNode;
+        return;
+    }
+
+    rear.next = newNode;
+    rear = newNode;
+}
+
+
+---
+
+Dequeue (Linked List)
+
+public int dequeue() {
+
+    if (front == null) {
+        System.out.println("Queue is Empty");
+        return -1;
+    }
+
+    int value = front.data;
+    front = front.next;
+
+    if (front == null) {
+        rear = null;
+    }
+
+    return value;
+}
+
+
+---
+
+📌 JAVA QUEUE (COLLECTION FRAMEWORK)
+
+
+---
+
+15️⃣ Theory
+
+Queue is an interface
+
+Implemented by LinkedList, ArrayDeque
+
+
+
+---
+
+Example (Clean & Simple)
+
+Queue<Integer> q = new LinkedList<>();
+
+q.add(10);
+q.add(20);
+q.add(30);
+
+System.out.println(q);   // [10, 20, 30]
+
+q.remove();              // removes 10
+
+System.out.println(q);   // [20, 30]
+
+
+---
+
+📌 FINAL EXAM POINTS ⭐
+
+Queue → FIFO
+
+Insert → Rear
+
+Remove → Front
+
+Array Queue → Fixed size
+
+Circular Queue → No space waste
+
+Linked List Queue → Dynamic size
+
