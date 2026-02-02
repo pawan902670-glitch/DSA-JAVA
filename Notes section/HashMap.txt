@@ -1,0 +1,219 @@
+HashMap & HashTable (Java) – Proper Structured Notes
+
+1. What is a Map?
+
+A Map is a data structure that stores data in key–value pairs.
+
+Each key is unique
+
+Each key maps to exactly one value
+
+
+Example (real life):
+
+Phonebook → Name (key) → Phone Number (value)
+
+Speaker store → Speaker Name (key) → Price (value)
+
+
+
+---
+
+2. HashMap
+
+Definition
+
+A HashMap is a class in Java that stores data in key–value pairs using a hash function.
+
+How it works (simple idea)
+
+1. Key is given
+
+
+2. Hash function converts key into an index
+
+
+3. Value is stored at that index
+
+
+
+
+---
+
+Important Features of HashMap
+
+Stores data as (key, value)
+
+Keys cannot be duplicate
+
+Values can be duplicate
+
+Allows one null key and multiple null values
+
+Unordered (no fixed order of elements)
+
+
+
+---
+
+Time Complexity (Average Case)
+
+Search: O(1)
+
+Insert: O(1)
+
+Delete: O(1)
+
+
+👉 This is why HashMap is very fast and efficient.
+
+
+---
+
+Why HashMap is preferred over Array?
+
+Array	HashMap
+
+Fixed size	Dynamic size
+Slow insertion/deletion	Fast insertion/deletion
+Index-based	Key-based
+
+
+
+---
+
+3. HashTable
+
+Definition
+
+A HashTable is similar to HashMap but:
+
+It is synchronized (thread-safe)
+
+Slower than HashMap
+
+
+
+---
+
+Differences: HashMap vs HashTable
+
+Feature	HashMap	HashTable
+
+Thread-safe	❌ No	✅ Yes
+Performance	Fast	Slower
+Null key	Allowed (1)	❌ Not allowed
+Null value	Allowed	❌ Not allowed
+
+
+
+---
+
+4. Ordered vs Unordered Maps
+
+HashMap → Unordered → Best performance
+
+LinkedHashMap → Maintains insertion order
+
+TreeMap → Sorted order (keys)
+
+
+
+---
+
+5. Syntax of HashMap (Java)
+
+import java.util.*;
+
+HashMap<String, Integer> mp = new HashMap<>();
+
+
+---
+
+6. Common Operations with Example
+
+Put (Insert data)
+
+mp.put("Akash", 21);
+mp.put("Yash", 16);
+mp.put("Love", 27);
+
+
+---
+
+Get (Retrieve value)
+
+System.out.println(mp.get("Yash"));
+
+📌 Output:
+
+Returns value if key exists
+
+Returns null if key does not exist
+
+
+
+---
+
+Remove
+
+mp.remove("Love");
+
+
+---
+
+Search / Contains
+
+mp.containsKey("Akash");
+mp.containsValue(21);
+
+
+---
+
+7. Important Notes
+
+HashMap cannot contain duplicate keys
+
+HashMap is best when fast performance is required
+
+Use HashTable when thread safety is required
+
+
+
+---
+
+8. Simple Clarification Example
+
+Question: What happens if we insert same key again?
+
+mp.put("Akash", 21);
+mp.put("Akash", 25);
+
+Answer:
+
+Old value is replaced
+
+Final value → Akash → 25
+
+
+
+---
+
+9. Summary
+
+HashMap → Fast, unordered, not synchronized
+
+HashTable → Thread-safe but slower
+
+Use HashMap in most cases
+
+Use HashTable only when multiple threads access data
+
+
+
+---
+
+✅ These notes are exam-ready, interview-friendly, and easy to revise.
+
+I’ve converted everything from your handwritten pages into clean, well-structured, exam-ready notes with clear explanations and examples.
+You can now read, revise, or print them easily 📘✨
