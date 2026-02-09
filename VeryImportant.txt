@@ -1,0 +1,11 @@
+Code → Dry run → 
+Logic ko apni language me likho →
+Fir code likho →
+Galti → logic fix karo (code nahi)
+
+✅ Ek powerful exercise (try this)
+Next problem me:
+1️⃣ Solution dekho
+2️⃣ Dry run karo
+3️⃣ Code band karo
+4️⃣ Sirf ye likho:
