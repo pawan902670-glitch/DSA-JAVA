@@ -9,3 +9,198 @@ Next problem me:
 2️⃣ Dry run karo
 3️⃣ Code band karo
 4️⃣ Sirf ye likho:
+
+
+Perfect 👍
+Here is the same pattern-tracking system, but very clear and simple English, like a mind map you can use every day.
+
+
+---
+
+🧠 ONE-PAGE PATTERN TRACKING MIND MAP
+
+STEP 1️⃣: Read the question and ask
+
+“What is repeating?”
+
+characters → string problems
+
+numbers → array problems
+
+sum / total → running sum problems
+
+
+👉 If something repeats → HashMap / HashSet is likely
+
+
+---
+
+STEP 2️⃣: Ask the most important question
+
+“What do I need to remember about the repeated thing?”
+
+Question words	What to track
+
+how many times	count
+unique / duplicate	frequency
+exists / seen	true / false
+index required	index
+
+
+👉 This decides what goes inside the map
+
+
+---
+
+STEP 3️⃣: Ask
+
+“When can I decide the answer?”
+
+immediately when condition matches → one loop
+
+only after full data is known → two loops
+
+
+
+---
+
+STEP 4️⃣: Identify the rule (condition)
+
+Common rules:
+
+count == 1
+
+count > 1
+
+sum == k
+
+target − current exists
+
+even / odd
+
+
+
+---
+
+🔑 FINAL THINKING FORMULA
+
+What repeats?
+      ↓
+What do I track?
+      ↓
+What rule decides the answer?
+      ↓
+When do I check?
+
+If you can answer these four → pattern is clear.
+
+
+---
+
+🧩 Example 1: First Unique Character
+
+Question words:
+
+first
+
+unique
+
+how many times
+
+
+Apply the map:
+
+What repeats? → characters
+
+What to track? → frequency (count)
+
+Rule? → count == 1
+
+When to check? → after counting all characters
+
+
+✅ Pattern: Frequency HashMap
+
+
+---
+
+🧩 Example 2: Two Sum
+
+Question words:
+
+two numbers
+
+target sum
+
+
+Apply the map:
+
+What repeats? → numbers
+
+What to track? → seen numbers
+
+Rule? → target − current exists
+
+When to check? → during the loop
+
+
+✅ Pattern: Complement HashMap
+
+
+---
+
+🧩 Example 3: Subarray Sum = K
+
+Question words:
+
+subarray
+
+sum equals k
+
+
+Apply the map:
+
+What repeats? → running sum
+
+What to track? → prefix sum count
+
+Rule? → currentSum − k exists
+
+When to check? → during the loop
+
+
+✅ Pattern: Prefix Sum + HashMap
+
+
+---
+
+🚫 Common beginner mistake
+
+❌ “I should use HashMap”
+✅ “I need to remember frequency / presence / sum”
+
+Data structure is a result, not the starting point.
+
+
+---
+
+💡 One line to remember forever
+
+> The question tells you what to track.
+Tracking tells you which pattern to use.
+
+
+
+
+---
+
+Practice rule (very important)
+
+Before writing code, always write this:
+
+Repeat:
+Track:
+Rule:
+Check:
+
+If you can write these → you are thinking like a problem solver 💯
