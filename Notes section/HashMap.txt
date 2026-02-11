@@ -196,7 +196,10 @@ Old value is replaced
 Final value → Akash → 25
 
 
-
+for (Map.Entry<Integer, Integer> entry : mp.entrySet()) {
+    System.out.println("Key: " + entry.getKey());
+    System.out.println("Value: " + entry.getValue());
+}
 ---
 
 9. Summary
